@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Week</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            font-family: 'Dancing Script', cursive;
+            background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
+            background-color: #ffcccb;
+            color: #5a2a27;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 48px;
+            color: #8b0000;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .week-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .day-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 2px solid #8b0000;
+            border-radius: 15px;
+            padding: 20px;
+            width: 160px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+        .day-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .heart {
+            color: #8b0000;
+            font-size: 32px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .day-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin: 10px 0;
+            color: #5a2a27;
+        }
+        .day-card p {
+            font-size: 18px;
+            color: #8b0000;
+            margin: 0;
+        }
+        .background-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .background-hearts span {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 0, 0, 0.3);
+            border-radius: 50%;
+            animation: animate-heart 10s linear infinite;
+            bottom: -150px;
+        }
+        .background-hearts span:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+        .background-hearts span:nth-child(2) {
+            left: 10%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+        .background-hearts span:nth-child(3) {
+            left: 70%;
+            width: 100px;
+            height: 100px;
+            animation-delay: 4s;
+        }
+        .background-hearts span:nth-child(4) {
+            left: 40%;
+            width: 50px;
+            height: 50px;
+            animation-delay: 0s;
+            animation-duration: 15s;
+        }
+        .background-hearts span:nth-child(5) {
+            left: 65%;
+            width: 70px;
+            height: 70px;
+            animation-delay: 0s;
+        }
+        .background-hearts span:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+        .background-hearts span:nth-child(7) {
+            left: 35%;
+            width: 90px;
+            height: 90px;
+            animation-delay: 7s;
+        }
+        @keyframes animate-heart {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+    <script>
+        function showMessage(day) {
+            const messages = {
+                'Rose Day': 'A single rose can be my garden, a single friend, my world. 🌹 You are my beautiful bloom.',
+                'Propose Day': 'I choose you. And I’ll choose you over and over. Without pause, without doubt, in a heartbeat. 💍',
+                'Chocolate Day': 'You’re the sweetest part of my life, just like chocolate melts in the heart. 🍫',
+                'Teddy Day': 'Cuddle me like your favorite teddy bear. I’ll always be here to comfort you. 🧸',
+                'Promise Day': 'I promise to love you more with every passing day and never let you feel alone. 🤝',
+                'Hug Day': 'A hug from you is my favorite place. It’s where my heart feels at home. 🤗',
+                'Kiss Day': 'Every kiss from you is a whisper of our love story written in the stars. 😘',
+                "Valentine's Day": 'You are my today, my tomorrow, and forever. Happy Valentine’s Day, my love. ❤️'
+            };
+            alert(messages[day]);
+        }
+    </script>
+</head>
+<body>
+    <div class="background-hearts">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <h1>❤️ Valentine Week ❤️</h1>
+    <div class="week-container">
+        <div class="day-card" onclick="showMessage('Rose Day')">
+            <div class="heart">🌹</div>
+            <h3>Rose Day</h3>
+            <p>7th February</p>
+        </div>
+        <div class="day-card" onclick="showMessage('Propose Day')">
+            <div class="heart">💍</div>
+            <h3>Propose Day</h3>
+            <p>8th February</p>
+        </div>
+        <div class="day-card" onclick="showMessage('Chocolate Day')">
+            <div class="heart">🍫</div>
+            <h3>Chocolate Day</h3>
+            <p>9th February</p>
+        </div>
+        <div class="day-card" onclick="showMessage('Teddy Day')">
+            <div class="heart">🧸</div>
+            <h3>Teddy Day</h3>
+            <p>10th February</p>
+        </div>
+        <div class="day-card" onclick="showMessage('Promise Day')">
+            <div class="heart">🤝</div>
+            <h3>Promise Day</h3>
+            <p>11th February</p>
+        </div>
+        <div class="day-card" onclick="showMessage('Hug Day')">
+            <div class="heart">🤗</div>
+            <h3>Hug Day</h3>
+            <p>12th February</p>
+        </div>
+        <div class="day-card" onclick="showMessage('Kiss Day')">
+            <div class="heart">😘</div>
+            <h3>Kiss Day</h3>
+            <p>13th February</p>
+        </div>
+        <div class="day-card" onclick="showMessage('Valentine\'s Day')">
+            <div class="heart">❤️</div>
+            <h3>Valentine's Day</h3>
+            <p>14th February</p>
+        </div>
+    </div>
+</body>
+</html>
